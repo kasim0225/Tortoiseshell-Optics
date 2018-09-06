@@ -1,0 +1,356 @@
+html {
+  font-family: "Helvetica", sans-serif;
+  font-size: 18px;
+  background-color: white;
+}
+
+body {
+  line-height: 1.4;
+}
+
+.container {
+/*限制橫向長度，以及包含在內的文字開頭地點*/
+  max-width: 960px;
+/*-----------*/
+/*讓橫向綠色範圍與包含在內的DIV自動對其中間*/
+  margin: auto;
+/*------------------------*/
+}
+
+/*與下方header .flex一起搭配服用，因後續還有其他地方會共同用到所以做一個大家用*/
+.flex {
+  display: flex;
+}
+
+/*----------------------------------標題開頭----------------------------------*/
+
+header {
+/*調整背景圖大小*/
+  height: 30rem;
+/*整體向下移*/
+  padding-top: 1rem;
+/*---------*/
+  background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/glasses-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+/*調整圖片大小*/
+    background-size: cover;
+/*-----------*/
+}
+
+nav {
+/*使用後只跑到標題右邊(Tortoiseshell Optics右邊)*/
+  display: flex;
+/*--------------------------------------------*/
+  align-items: center;
+/*使用後跑到標題最右邊*/
+  justify-content: space-between;
+/*------------------*/
+/*背景綠色那塊變寬*/
+  padding: 1rem 0;
+/*--------------*/
+  background-color: cadetblue;
+  color: white;
+}
+
+/*把上方的menu調到另外三個選項的右邊*/
+nav div {
+  display: flex;
+  align-items: center;
+}
+/*-------------------------------*/
+
+nav img {
+/*改變圖片大小*/
+  height: 1.5rem;
+/*-----------*/
+/*開頭圖片以及文字向右移*/
+  margin-left: 2rem;
+/*--------------------*/
+/*開頭圖片向右移*/
+  margin-right: 1rem;
+/*-------------*/
+}
+
+
+/*因上方更改menu，menu與另外三個移動時仍帶有隔閡*/
+nav ul {
+  margin-right: 1rem;
+}
+/*-------------------------------------------*/
+
+nav li {
+/*右上方選項從垂直變成橫向*/
+  display: inline;
+/*----------------------*/
+/*選項彼此距離取開*/
+  padding: 0 1rem;
+/*--------------*/
+}
+
+/*把menu隱藏，上方選項會自動向右補上*/
+.truncated-menu {
+  display: none;
+}
+/*-------------------------------*/
+
+/*與上方.flex一起搭配服用，使DON'T JUST LOOK, SEE.移至最右邊*/
+header .flex {
+  justify-content: flex-end;
+}
+/*-------------------------------------------------------*/
+
+.main-banner {
+/*意義不明*/
+  display: inline-block;
+/*-------*/
+/*調整位置，讓他向下向左*/
+  padding: 1.5rem 5rem;
+/*-------------------*/
+/*向下幅度大增*/
+  margin-top: 10rem;
+/*-----------*/
+/*向右移動一點*/
+  margin-right: -2rem;
+/*-----------*/
+/*座白色背景框框*/
+  background-color: white;
+/*-------------*/
+}
+
+h1 {
+/*調整字體大小，也讓白色框框變大*/
+  font-size: 2rem;
+/*---------------------------*/
+/*字稍稍往上*/
+  line-height: 1.2;
+/*---------*/
+/*字體變粗*/
+  font-weight: bold;
+/*-------*/
+}
+
+/*標題手機版開始*/
+
+@media only screen and (max-width: 1024px) {
+  header {
+    height: 22rem;
+    padding-top: 0;
+  }
+
+  nav.container {
+    max-width: 100%;
+  }
+
+  .main-banner {
+    padding: 0.75rem 4rem;
+    margin-top: 5rem;
+    margin-right: 2rem;
+  }
+
+  .main-banner h1 {
+    font-size: 1.33rem;
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  .menu ul {
+    display: none;
+  }
+
+  .menu ul.truncated-menu {
+    display: block;
+  }
+}
+
+
+@media only screen and (max-width: 560px) {
+  header div span {
+    display: none;
+  }
+
+  header {
+    background-position: 20%;
+    height: 17rem;
+  }
+
+  .main-banner {
+    width: 100%;
+    padding: 0 1rem;
+    margin: 9rem auto 0 auto;
+    text-align: center;
+  }
+
+  .main-banner h1 {
+    font-size: 1rem;
+  }
+}
+
+/*標題手機板結束*/
+
+/*--------------------------------標題開頭結束--------------------------------*/
+
+/*--------------------------------圖片範圍開始--------------------------------*/
+
+/*使圖片以及文字從縱向變成橫向，且置中*/
+.supporting {
+  display: flex;
+  justify-content: center;
+}
+/*---------------------------------*/
+
+/*同樣東西已完成，先做內容手機板*/
+
+@media only screen and (max-width: 560px) {
+  .supporting {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 3rem;
+  }
+}
+/*--------------------------*/
+
+
+
+
+.service {
+/*因三個圖片有各自DIV所以可以使三個圖片等距離分開*/
+  display: flex;
+/*------------------------------------------*/
+/*使三個圖片完全緊靠*/
+  flex-direction: column;
+/*----------------*/
+/*使三行文字下降到同一行*/
+  justify-content: space-between;
+/*--------------------*/
+/*文字等距分開 ，最左邊圖形縮小不明白為甚麼*/
+  align-items: center;
+/*-------------------*/
+/*調整圖片大小*/
+  width: 5rem;
+/*-----------*/
+/*字母跳回身邊圖形下方*/
+  height: 8rem;
+/*------------------*/
+/*等距分開三個圖片*/
+  margin: 3rem;
+/*--------------*/
+/*字也等距分開置中*/
+  text-align: center;
+/*--------------*/
+}
+
+.service img {
+/*調整圖片大小*/
+  width: 5rem;
+/*-----------*/
+/*讓字往下移與圖片分開*/
+  margin-bottom: 1rem;
+/*------------------*/
+}
+
+/*把最左邊的圖大小更改*/
+.service img.paper-icon {
+  width: 3.5rem;
+}
+/*------------------*/
+
+@media only screen and (max-width: 560px) {
+  .service {
+    height: auto;
+    margin: .77rem;
+    font-size: .77rem;
+  }
+}
+/*--------------------------------圖片範圍結束--------------------------------*/
+
+/*--------------------------------文字內容開始--------------------------------*/
+
+.info {
+/*把橫向的行長度限制成35%，讓他提早自動換行*/
+  width: 35%;
+/*-------------------------------------*/
+/*讓左邊的文字內容向左移*/
+  margin-right: 5%;
+/*--------------------*/
+/*讓整體文字的框框往上移動*/
+  margin-bottom: 4rem;
+/*----------------------*/
+}
+
+/*讓文字標題與內容間隔取出來*/
+.info p {
+  padding: 1rem 0;
+}
+/*-----------------------*/
+
+.title {
+  max-width: 10rem;
+/*標鼻往右往下移動一些，內容直接往下移動一些*/
+  padding: 0.5rem 1.25rem;
+/*--------------------------------------*/
+/*標題背景上色*/
+  background-color: cadetblue;
+/*-----------*/
+/*標題字變粗體*/
+  font-weight: bold;
+/*-----------*/
+  color: white;
+}
+
+@media only screen and (max-width: 560px) {
+  .info {
+    width: 100%;
+  }
+
+  .info .title {
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .info p {
+    padding: 1rem;
+    font-size: .77rem;
+  }
+}
+/*--------------------------------文字內容結束--------------------------------*/
+/*----------------------------------結尾開始----------------------------------*/
+footer {
+/*讓圖片以及文字的排列方式由縱向改成橫向*/
+  display: flex;
+/*----------------------------------*/
+/*讓文字變成置中*/
+  align-items: center;
+/*------------*/
+  background-color: azure;
+/*讓footer整個內容離上面框框以及頁尾距離拉開*/
+  padding: 4rem 2rem;
+/*--------------------------------------*/
+}
+
+footer img {
+/*調整圖片大小*/
+  height: 1.5rem;
+/*-----------*/
+/*footer整體向右移動*/
+  margin-left: 2rem;
+/*-----------------*/
+/*footer的文字而已向右移動*/
+  margin-right: 1rem;
+/*----------------------*/
+}
+
+@media only screen and (max-width: 560px) {
+  footer {
+    justify-content: center;
+  }
+
+  footer div {
+    display: none;
+  }
+}
+/*----------------------------------結尾結束----------------------------------*/
